@@ -39,117 +39,120 @@ const scrollButtonsScale = "scale(1.3)";
 
 buttons = [welcomeButton, aboutButton, skillsButton, contactsButton];
 
-function styleClickedButton(btn){
-    for (bt of buttons){
-        bt.style.color = fontColor;
-        bt.style.textShadow = "none";
-        bt.style.transform = "none";
-    }
-    btn.style.color = focusColor;
-    btn.style.textShadow = shadowIlluminate;
-    btn.style.transform = scrollButtonsScale;
+function styleClickedButton(btn) {
+  for (bt of buttons) {
+    bt.style.color = fontColor;
+    bt.style.textShadow = "none";
+    bt.style.transform = "none";
+  }
+  btn.style.color = focusColor;
+  btn.style.textShadow = shadowIlluminate;
+  btn.style.transform = scrollButtonsScale;
 }
 
 // ------------------------------------------------------------------ SLIDE FROM WELCOME
 
-welcomeButton.addEventListener("click", function() {
-    welcome.style.display = 'flex';
-    about.style.display = 'none';
-    skills.style.display = 'none';
-    contacts.style.display = 'none';
-    styleClickedButton(welcomeButton);
-})
+welcomeButton.addEventListener("click", function () {
+  welcome.style.display = "flex";
+  about.style.display = "none";
+  skills.style.display = "none";
+  contacts.style.display = "none";
+  styleClickedButton(welcomeButton);
+});
 
-welcomeDown_Btn.addEventListener("click",function slideDown(){
-    welcome.style.display = 'none';
-    about.style.display = 'flex';
-    skills.style.display = 'none';
-    contacts.style.display = 'none';
-})
-
+welcomeDown_Btn.addEventListener("click", function slideDown() {
+  welcome.style.display = "none";
+  about.style.display = "flex";
+  skills.style.display = "none";
+  contacts.style.display = "none";
+});
 
 // ------------------------------------------------------------------ SLIDE FROM ABOUT
 
-aboutButton.addEventListener("click", function() { 
-    welcome.style.display = 'none';
-    about.style.display = 'flex';
-    skills.style.display = 'none';
-    contacts.style.display = 'none';
-    styleClickedButton(aboutButton);
-})
+aboutButton.addEventListener("click", function () {
+  welcome.style.display = "none";
+  about.style.display = "flex";
+  skills.style.display = "none";
+  contacts.style.display = "none";
+  styleClickedButton(aboutButton);
+});
 
-aboutUp_Btn.addEventListener("click",function slideDown(){
-    welcome.style.display = 'flex';
-    about.style.display = 'none';
-    skills.style.display = 'none';
-    contacts.style.display = 'none';
-})
+aboutUp_Btn.addEventListener("click", function slideDown() {
+  welcome.style.display = "flex";
+  about.style.display = "none";
+  skills.style.display = "none";
+  contacts.style.display = "none";
+});
 
-
-aboutDown_Btn.addEventListener("click",function slideDown(){
-    welcome.style.display = 'none';
-    about.style.display = 'none';
-    skills.style.display = 'flex';
-    contacts.style.display = 'none';
-})
+aboutDown_Btn.addEventListener("click", function slideDown() {
+  welcome.style.display = "none";
+  about.style.display = "none";
+  skills.style.display = "flex";
+  contacts.style.display = "none";
+});
 
 // ------------------------------------------------------------------ SLIDE FROM SKILLS
 
-skillsButton.addEventListener("click", function() {
-    welcome.style.display = 'none';
-    about.style.display = 'none';
-    skills.style.display = 'flex';
-    contacts.style.display = 'none';
-    styleClickedButton(skillsButton);
-})
+skillsButton.addEventListener("click", function () {
+  welcome.style.display = "none";
+  about.style.display = "none";
+  skills.style.display = "flex";
+  contacts.style.display = "none";
+  styleClickedButton(skillsButton);
+});
 
-skillsUp_Btn.addEventListener("click",function slideDown(){
-    welcome.style.display = 'none';
-    about.style.display = 'flex';
-    skills.style.display = 'none';
-    contacts.style.display = 'none';
-})
+skillsUp_Btn.addEventListener("click", function slideDown() {
+  welcome.style.display = "none";
+  about.style.display = "flex";
+  skills.style.display = "none";
+  contacts.style.display = "none";
+});
 
-
-skillsDown_Btn.addEventListener("click",function slideDown(){
-    welcome.style.display = 'none';
-    about.style.display = 'none';
-    skills.style.display = 'none';
-    contacts.style.display = 'flex';
-})
+skillsDown_Btn.addEventListener("click", function slideDown() {
+  welcome.style.display = "none";
+  about.style.display = "none";
+  skills.style.display = "none";
+  contacts.style.display = "flex";
+});
 
 // ------------------------------------------------------------------ SLIDE FROM CONTACTS
 
-contactsButton.addEventListener("click", function() {
-    welcome.style.display = 'none';
-    about.style.display = 'none';
-    skills.style.display = 'none';
-    contacts.style.display = 'flex';
-    styleClickedButton(contactsButton);
-})
+contactsButton.addEventListener("click", function () {
+  welcome.style.display = "none";
+  about.style.display = "none";
+  skills.style.display = "none";
+  contacts.style.display = "flex";
+  styleClickedButton(contactsButton);
+});
 
-contactsUp_Btn.addEventListener("click",function slideDown(){
-    welcome.style.display = 'none';
-    about.style.display = 'none';
-    skills.style.display = 'flex';
-    contacts.style.display = 'none';
-})
+contactsUp_Btn.addEventListener("click", function slideDown() {
+  welcome.style.display = "none";
+  about.style.display = "none";
+  skills.style.display = "flex";
+  contacts.style.display = "none";
+});
 
 // ------------------------------------------------------------------ ALBUM CHANGE
 
-
-function changeImage(img){
-    albumImg.innerHTML = `
+function changeImage(img) {
+  albumImg.innerHTML = `
     <img class="album-picture" src="Pictures/${img}.jpg" alt="my picture">
-    ` ;
+    `;
 }
 
-function changeImageLoop(){
-    const pictures = ["GrandCanion", "Philadelphia", "SanFrancisco","Sequoia","LA"];
-    for (let i = 0; i < pictures.length; i++)
-    setTimeout(changeImage.bind(pictures[i]), i*5000, pictures[i]);
+function changeImageLoop() {
+  const pictures = [
+    "GrandCanion",
+    "Philadelphia",
+    "SanFrancisco",
+    "Sequoia",
+    "LA",
+  ];
+  for (let i = 0; i < pictures.length; i++)
+    setTimeout(changeImage.bind(pictures[i]), i * 5000, pictures[i]);
 }
 
 changeImageLoop();
 
 setInterval(changeImageLoop, 25000);
+

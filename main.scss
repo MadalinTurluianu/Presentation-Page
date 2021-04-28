@@ -665,8 +665,7 @@ textarea:valid ~ span{
 }
 
 .submit-button input:hover,
-.submit-button input:focus,
-.submit-button input:active{
+.submit-button input:focus{
     box-shadow: 0px 0px 5px $primary-font-color;
     transform: scale(1.2);
 }

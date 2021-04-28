@@ -1,283 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="main.css">
-  <title>Madalin Turluianu</title>
-  <script src="App.js" defer></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Madalin Turluianu</title>
+    <script src="App.js" defer></script>
 
-<!-- ------------------------------------------------------------------ NAVIGATION  -->
-<!-- ------------------------------------------------------------------ NAVIGATION  -->
-<!-- ------------------------------------------------------------------ NAVIGATION  -->
+    <!-- ------------------------------------------------------------------ JS EMAIL  -->
 
-<header class="navigation-wrapper">
-  <div class="navigation">
-    <button class="welcome-button scroll-button">Welcome</button>
-    <button class="about-button scroll-button">About</button>
-    <button class="skills-button scroll-button">Skills</button>
-    <button class="contacts-button scroll-button">Contacts</button>
-  </div>
-</header>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_HdbpsWh0ieCHgE1phiwDa");
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            emailjs.sendForm("contact_service", "contact_form", this).then(
+              function () {
+                console.log("SUCCESS!");
+              },
+              function (error) {
+                console.log("FAILED...", error);
+              }
+            );
+            const userName = document.querySelector(".user-name");
+            const userContact = document.querySelector(".user-contact");
+            const textarea = document.querySelector("textarea");
+            const submitBtn = document.querySelector(".submit-btn");
 
-<!-- ------------------------------------------------------------------ WELCOME -->
-<!-- ------------------------------------------------------------------ WELCOME -->
-<!-- ------------------------------------------------------------------ WELCOME -->
+            userName.value = "";
+            userContact.value = "";
+            textarea.value = "";
+            submitBtn.blur();
+          });
+      };
+    </script>
 
-<main id="welcome" class="slides">
-  <div class="welcome-content">
-    <div class="welcome-text">
-      <h1>I'M MADALIN</h1>
-      <h2>I'm a self taught frontend web developer</h2>
-      <h2>And this is my presentation page</h2>
-    </div>
-  
-    <div class="welcome-picture__wrapper">
-      <div class="welcome-picture">
-        <img src="Pictures/MyPicture.png" alt="Welcome Img">
+    <!-- ------------------------------------------------------------------ JS EMAIL  -->
+  </head>
+  <body>
+    <!-- ------------------------------------------------------------------ NAVIGATION  -->
+    <!-- ------------------------------------------------------------------ NAVIGATION  -->
+    <!-- ------------------------------------------------------------------ NAVIGATION  -->
+
+    <header class="navigation-wrapper">
+      <div class="navigation">
+        <button class="welcome-button scroll-button">Welcome</button>
+        <button class="about-button scroll-button">About</button>
+        <button class="skills-button scroll-button">Skills</button>
+        <button class="contacts-button scroll-button">Contacts</button>
       </div>
-    </div>
-  </div>
+    </header>
 
-  <button class="welcome-down__btn down-btn">
-    <img src="Pictures/Icons/DOWN.png" alt="Down arrow">
-  </button>
+    <!-- ------------------------------------------------------------------ WELCOME -->
+    <!-- ------------------------------------------------------------------ WELCOME -->
+    <!-- ------------------------------------------------------------------ WELCOME -->
 
-</main>
-<!-- ------------------------------------------------------------------ ABOUT ME -->
-<!-- ------------------------------------------------------------------ ABOUT ME -->
-<!-- ------------------------------------------------------------------ ABOUT ME -->
+    <main id="welcome" class="slides">
+      <div class="welcome-content">
+        <div class="welcome-text">
+          <h1>I'M MADALIN</h1>
+          <h2>I'm a self taught frontend web developer</h2>
+          <h2>And this is my presentation page</h2>
+        </div>
 
-<main id="about" class="slides">
-  <div class="about-content">
-    <section class="about-me">
-      <h1>ABOUT ME</h1>
-      <p>My name is Madalin Turluianu, I was born in Romania, but I lived in Italy for 14 years.<br><br> 
-        After I finished the highschool I decided to come back to Romania and here I started to study mechanical engineering at the University Politehnica of Bucharest.<br><br>
-        However, I realized the mechanical engineering wasn't what I wanted to do in my life, so I started to learn programming, something which fascinated me since I was a kid.<br><br>
-        I'm a persevering person, I like to improve myself, to learn new things and to do what it takes to achieve my goals.<br><br>
-      </p>
-    </section>
-  
-    <section class="album">
-      <div class="image-wrapper">
-        <img class="album-picture" src="Pictures/LA.jpg" alt="my picture">
+        <div class="welcome-picture__wrapper">
+          <div class="welcome-picture">
+            <img src="Pictures/MyPicture.png" alt="Welcome Img" />
+          </div>
+        </div>
       </div>
-    </section>
-  </div>
 
-  <button class="about-down__btn down-btn">
-    <img src="Pictures/Icons/DOWN.png" alt="Down arrow">
-  </button>
+      <button class="welcome-down__btn down-btn">
+        <img src="Pictures/Icons/DOWN.png" alt="Down arrow" />
+      </button>
+    </main>
+    <!-- ------------------------------------------------------------------ ABOUT ME -->
+    <!-- ------------------------------------------------------------------ ABOUT ME -->
+    <!-- ------------------------------------------------------------------ ABOUT ME -->
 
-  <button class="about-up__btn up-btn">
-    <img src="Pictures/Icons/UP.png" alt="Down arrow">
-  </button>
+    <main id="about" class="slides">
+      <div class="about-content">
+        <section class="about-me">
+          <h1>ABOUT ME</h1>
+          <p>
+            My name is Madalin Turluianu, I was born in Romania, but I lived in
+            Italy for 14 years.<br /><br />
+            After I finished the highschool I decided to come back to Romania
+            and here I started to study mechanical engineering at the University
+            Politehnica of Bucharest.<br /><br />
+            However, I realized the mechanical engineering wasn't what I wanted
+            to do in my life, so I started to learn programming, something which
+            fascinated me since I was a kid.<br /><br />
+            I'm a persevering person, I like to improve myself, to learn new
+            things and to do what it takes to achieve my goals.<br /><br />
+          </p>
+        </section>
 
+        <section class="album">
+          <div class="image-wrapper">
+            <img class="album-picture" src="Pictures/LA.jpg" alt="my picture" />
+          </div>
+        </section>
+      </div>
 
-</main>
+      <button class="about-down__btn down-btn">
+        <img src="Pictures/Icons/DOWN.png" alt="Down arrow" />
+      </button>
 
-<!-- ------------------------------------------------------------------ SKILLS  -->
-<!-- ------------------------------------------------------------------ SKILLS  -->
-<!-- ------------------------------------------------------------------ SKILLS  -->
+      <button class="about-up__btn up-btn">
+        <img src="Pictures/Icons/UP.png" alt="Down arrow" />
+      </button>
+    </main>
 
-<main id="skills" class="slides">
-  <div class="skills-content">
+    <!-- ------------------------------------------------------------------ SKILLS  -->
+    <!-- ------------------------------------------------------------------ SKILLS  -->
+    <!-- ------------------------------------------------------------------ SKILLS  -->
 
-<!-- ------------------------------------------------------------------ FRONTEND SKILLS -->
+    <main id="skills" class="slides">
+      <div class="skills-content">
+        <!-- ------------------------------------------------------------------ FRONTEND SKILLS -->
 
-    <section class="coding-skills skills-container">
-      <h2 class="skills-title">Frontend skills</h2>
-      <div class="skills-grid">
-        <h3 class="skill-name">HTML</h3>
-        <div class="html skill">
-          <img src="Pictures/Icons/HTML.png" alt="HTML icon" class="skill-icon">
-        </div>
-        <h3 class="skill-name">CSS</h3>
-        <div class="css skill">
-          <img src="Pictures/Icons/CSS.png" alt="CSS icon" class="skill-icon">
-        </div>
-        <h3 class="skill-name">JS</h3>
-        <div class="js skill">
-          <img src="Pictures/Icons/JS.png" alt="JS icon" class="skill-icon">
-        </div>
-        <h3 class="skill-name">Vue</h3>
+        <section class="coding-skills skills-container">
+          <h2 class="skills-title">Frontend skills</h2>
+          <div class="skills-grid">
+            <h3 class="skill-name">HTML</h3>
+            <div class="html skill">
+              <img
+                src="Pictures/Icons/HTML.png"
+                alt="HTML icon"
+                class="skill-icon"
+              />
+            </div>
+            <h3 class="skill-name">CSS</h3>
+            <div class="css skill">
+              <img
+                src="Pictures/Icons/CSS.png"
+                alt="CSS icon"
+                class="skill-icon"
+              />
+            </div>
+            <h3 class="skill-name">JS</h3>
+            <div class="js skill">
+              <img
+                src="Pictures/Icons/JS.png"
+                alt="JS icon"
+                class="skill-icon"
+              />
+            </div>
+            <!-- <h3 class="skill-name">Vue</h3>
         <div class="vue skill">
           <img src="Pictures/Icons/VUE.png" alt="VUE icon" class="skill-icon">
-        </div>
-        <h3 class="skill-name">React</h3>
-        <div class="react skill">
-          <img src="Pictures/Icons/REACT.png" alt="REACT icon" class="skill-icon">
-        </div>
-      </div>
-      <div class="sub-skills__grid">
-        <div class="sass sub-skill">
-          <img src="Pictures/Icons/SASS.png" alt="SASS icon" class="skill-icon">
-        </div>
-        <div class="nuxt sub-skill">
+        </div> -->
+            <h3 class="skill-name">React</h3>
+            <div class="react skill">
+              <img
+                src="Pictures/Icons/REACT.png"
+                alt="REACT icon"
+                class="skill-icon"
+              />
+            </div>
+          </div>
+          <div class="sub-skills__grid">
+            <div class="sass sub-skill">
+              <img
+                src="Pictures/Icons/SASS.png"
+                alt="SASS icon"
+                class="skill-icon"
+              />
+            </div>
+            <!-- <div class="nuxt sub-skill">
           <img src="Pictures/Icons/NUXT.png" alt="NUXT icon" class="skill-icon">
         </div>
         <div class="next sub-skill">
           <img src="Pictures/Icons/NEXT.png" alt="NEXT icon" class="skill-icon">
-        </div>
-      </div>
-    </section>
+        </div> -->
+          </div>
+        </section>
 
-<!-- ------------------------------------------------------------------ CODING SKILLS -->
+        <!-- ------------------------------------------------------------------ CODING SKILLS -->
 
-    <section class="coding-skills__other skills-container">
-      <h2 class="skills-title">Other coding skills [Basics]</h2>
-      <div class="skills-grid">
-        <h3 class="skill-name">Python</h3>
-        <div class="python skill">
-          <img src="Pictures/Icons/PYTHON.png" alt="PYTHON icon" class="skill-icon">
-        </div>
-        <h3 class="skill-name">Node.js</h3>
+        <section class="coding-skills__other skills-container">
+          <h2 class="skills-title">Other coding skills [Basics]</h2>
+          <div class="skills-grid">
+            <h3 class="skill-name">Python</h3>
+            <div class="python skill">
+              <img
+                src="Pictures/Icons/PYTHON.png"
+                alt="PYTHON icon"
+                class="skill-icon"
+              />
+            </div>
+            <!-- <h3 class="skill-name">Node.js</h3>
         <div class="node skill">
           <img src="Pictures/Icons/NODEJS.png" alt="NODE.JS icon" class="skill-icon">
         </div>
         <h3 class="skill-name">TS</h3>
         <div class="typescript skill">
           <img src="Pictures/Icons/TS.png" alt="TS icon" class="skill-icon">
-        </div>
-      </div>
-    </section>
-
-<!-- ------------------------------------------------------------------ LANGUAGE SKILLS -->
-
-    <section class="language-skills skills-container">
-      <h2 class="skills-title">Language skills</h2>
-      <div class="skills-grid">
-        <h3 class="skill-name">Romanian</h3>
-        <div class="romanian skill">
-          <img src="Pictures/Icons/C2.png" alt="C2 icon" class="skill-icon">
-        </div>
-        <h3 class="skill-name">English</h3>
-        <div class="english skill">
-          <img src="Pictures/Icons/B2.png" alt="B2 icon" class="skill-icon">
-        </div>
-        <h3 class="skill-name">Italian</h3>
-        <div class="italian skill">
-          <img src="Pictures/Icons/C2.png" alt="C2 icon" class="skill-icon">
-        </div>
-      </div>
-    </section>
-
-<!-- ------------------------------------------------------------------ USEFUL KNOWLEDGE -->
-    
-    <section class="useful-skills skills-container">
-      <h2 class="skills-title">Useful knowledge [Basics]</h2>
-      <div class="skills-grid">
-        <h3 class="skill-name">GIT</h3>
-        <div class="git skill">
-          <img src="Pictures/Icons/GIT.png" alt="GIT icon" class="skill-icon">
-        </div>
-        <h3 class="skill-name">GIT Hub</h3>
-        <div class="git-hub skill">
-          <img src="Pictures/Icons/GITHUB.png" alt="GIT HUB icon" class="skill-icon">
-        </div>
-        <h3 class="skill-name">CMD</h3>
-        <div class="cmd skill">
-          <img src="Pictures/Icons/CMD.png" alt="CMD icon" class="skill-icon">
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <button class="skills-down__btn down-btn">
-    <img src="Pictures/Icons/DOWN.png" alt="Down arrow">
-  </button>
-
-  <button class="skills-up__btn up-btn">
-    <img src="Pictures/Icons/UP.png" alt="Down arrow">
-  </button>
-
-
-</main>
-
-<!-- ------------------------------------------------------------------ CONTACTS -->
-<!-- ------------------------------------------------------------------ CONTACTS -->
-<!-- ------------------------------------------------------------------ CONTACTS -->
-
-<main id="contacts" class="slides">
-  <div class="contacts-content">
-
-<!-- ------------------------------------------------------------------ CONTACT FORM  -->
-
-    <section class="contact-me">
-      <form>
-        <h2 class="contact-me__title">Leave me a message</h2>
-
-        <div class="contact-inputs">
-          <input type="text" required>
-          <span>Full name</span>
-        </div>
-        
-        <div class="contact-inputs">
-          <input type="text" required>
-          <span>Company name</span>
-        </div>
-        
-        <div class="contact-inputs__textarea contact-inputs">
-          <textarea required></textarea>
-          <span>Type here ...</span>
-        </div>
-
-        <div class="submit-button">
-          <input type="submit" value="Send">
-        </div>
-      </form>
-    </section>
-
-<!-- ------------------------------------------------------------------ MY CONTACTS  -->
-
-    <section class="my-contacts">
-      <div class="contacts-container">
-        <div class="contact-container location">
-          <div class="contact-icon">
-            <img src="Pictures/Icons/location.png" alt="">
+        </div> -->
           </div>
-          <h3 class="contact-text">Bucharest</h3>
-        </div>
-  
-        <div class="contact-container mail">
-          <div class="contact-icon">
-            <img src="Pictures/Icons/MAIL.png" alt="MAIL">
+        </section>
+
+        <!-- ------------------------------------------------------------------ LANGUAGE SKILLS -->
+
+        <section class="language-skills skills-container">
+          <h2 class="skills-title">Language skills</h2>
+          <div class="skills-grid">
+            <h3 class="skill-name">Romanian</h3>
+            <div class="romanian skill">
+              <img
+                src="Pictures/Icons/C2.png"
+                alt="C2 icon"
+                class="skill-icon"
+              />
+            </div>
+            <h3 class="skill-name">English</h3>
+            <div class="english skill">
+              <img
+                src="Pictures/Icons/B2.png"
+                alt="B2 icon"
+                class="skill-icon"
+              />
+            </div>
+            <h3 class="skill-name">Italian</h3>
+            <div class="italian skill">
+              <img
+                src="Pictures/Icons/C2.png"
+                alt="C2 icon"
+                class="skill-icon"
+              />
+            </div>
           </div>
-          <h3 class="contact-text">turluianu.petre.madalin@gmail.com</h3>
-        </div>
-  
-        <div class="contact-container phone">
-          <div class="contact-icon">
-            <img src="Pictures/Icons/PHONE.png" alt="PHONE">
+        </section>
+
+        <!-- ------------------------------------------------------------------ USEFUL KNOWLEDGE -->
+
+        <section class="useful-skills skills-container">
+          <h2 class="skills-title">Useful knowledge [Basics]</h2>
+          <div class="skills-grid">
+            <h3 class="skill-name">GIT</h3>
+            <div class="git skill">
+              <img
+                src="Pictures/Icons/GIT.png"
+                alt="GIT icon"
+                class="skill-icon"
+              />
+            </div>
+            <h3 class="skill-name">GIT Hub</h3>
+            <div class="git-hub skill">
+              <img
+                src="Pictures/Icons/GITHUB.png"
+                alt="GIT HUB icon"
+                class="skill-icon"
+              />
+            </div>
+            <h3 class="skill-name">CMD</h3>
+            <div class="cmd skill">
+              <img
+                src="Pictures/Icons/CMD.png"
+                alt="CMD icon"
+                class="skill-icon"
+              />
+            </div>
           </div>
-          <h3 class="contact-text">+40 745490512</h3>
-        </div>
-  
-        <div class="contact-container linkedin">
-          <div class="contact-icon">
-            <a href="https://www.linkedin.com/in/petre-madalin-turluianu-46a219209/" rel="noopener noreferrer" target="_blank">
-              <img src="Pictures/Icons/LinkedIn.png" alt="LINKED IN">
-            </a>     
-          </div>
-          <a href="https://www.linkedin.com/in/petre-madalin-turluianu-46a219209/" rel="noopener noreferrer" target="_blank">
-            <h3 class="contact-text">Linked In</h3>
-          </a>
-        </div>
+        </section>
       </div>
-    </section>
 
-  </div>
+      <button class="skills-down__btn down-btn">
+        <img src="Pictures/Icons/DOWN.png" alt="Down arrow" />
+      </button>
 
-  <button class="contacts-up__btn up-btn">
-    <img src="Pictures/Icons/UP.png" alt="Down arrow">
-  </button>
+      <button class="skills-up__btn up-btn">
+        <img src="Pictures/Icons/UP.png" alt="Down arrow" />
+      </button>
+    </main>
 
-</main>
+    <!-- ------------------------------------------------------------------ CONTACTS -->
+    <!-- ------------------------------------------------------------------ CONTACTS -->
+    <!-- ------------------------------------------------------------------ CONTACTS -->
 
-</body>
+    <main id="contacts" class="slides">
+      <div class="contacts-content">
+        <!-- ------------------------------------------------------------------ CONTACT FORM  -->
+
+        <section class="contact-me">
+          <form id="contact-form">
+            <h2 class="contact-me__title">Leave me a message</h2>
+
+            <div class="contact-inputs">
+              <input class="user-name" type="text" name="user" required />
+              <span>Full name</span>
+            </div>
+
+            <div class="contact-inputs">
+              <input class="user-contact" type="text" name="user_contact" required />
+              <span>Contact</span>
+            </div>
+
+            <div class="contact-inputs__textarea contact-inputs">
+              <textarea name="message" required></textarea>
+              <span>Type here ...</span>
+            </div>
+
+            <div class="submit-button">
+              <input class="submit-btn" type="submit" value="Send" />
+            </div>
+          </form>
+        </section>
+
+        <!-- ------------------------------------------------------------------ MY CONTACTS  -->
+
+        <section class="my-contacts">
+          <div class="contacts-container">
+            <div class="contact-container location">
+              <div class="contact-icon">
+                <img src="Pictures/Icons/location.png" alt="" />
+              </div>
+              <h3 class="contact-text">Bucharest</h3>
+            </div>
+
+            <div class="contact-container mail">
+              <div class="contact-icon">
+                <img src="Pictures/Icons/MAIL.png" alt="MAIL" />
+              </div>
+              <h3 class="contact-text">turluianu.petre.madalin@gmail.com</h3>
+            </div>
+
+            <div class="contact-container phone">
+              <div class="contact-icon">
+                <img src="Pictures/Icons/PHONE.png" alt="PHONE" />
+              </div>
+              <h3 class="contact-text">+40 745490512</h3>
+            </div>
+
+            <div class="contact-container linkedin">
+              <div class="contact-icon">
+                <a
+                  href="https://www.linkedin.com/in/petre-madalin-turluianu-46a219209/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <img src="Pictures/Icons/LinkedIn.png" alt="LINKED IN" />
+                </a>
+              </div>
+              <a
+                href="https://www.linkedin.com/in/petre-madalin-turluianu-46a219209/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <h3 class="contact-text">Linked In</h3>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <button class="contacts-up__btn up-btn">
+        <img src="Pictures/Icons/UP.png" alt="Down arrow" />
+      </button>
+    </main>
+  </body>
 </html>
