@@ -135,9 +135,11 @@ contactsUp_Btn.addEventListener("click", function slideDown() {
 // ------------------------------------------------------------------ ALBUM CHANGE
 
 function changeImage(img) {
+  albumImg.style.display = "none";
   albumImg.innerHTML = `
     <img class="album-picture" src="Pictures/${img}.jpg" alt="my picture">
     `;
+  albumImg.style.display = "flex";
 }
 
 function changeImageLoop() {
@@ -148,8 +150,9 @@ function changeImageLoop() {
     "Sequoia",
     "LA",
   ];
-  for (let i = 0; i < pictures.length; i++)
+  for (let i = 0; i < pictures.length; i++) {
     setTimeout(changeImage.bind(pictures[i]), i * 5000, pictures[i]);
+  }
 }
 
 changeImageLoop();
